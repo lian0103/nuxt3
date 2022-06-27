@@ -6,5 +6,6 @@
 -使用composables API     
 -使用server API     
 
-## TODO
-待瞭解打包部屬的部分
+## 部屬
+2022-06-27
+試著在Heroku、Firebase上部屬，但仍有錯誤。而在Vercel可以順利部屬。
