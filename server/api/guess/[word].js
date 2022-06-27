@@ -1,5 +1,5 @@
 import { useCookie } from 'h3';
-import { generateAnswer, decode, encode } from '~~/utils';
+import { generateAnswer, decode, encode, generateHint } from '~~/utils';
 
 export default defineEventHandler(async (event) => {
   let { word: guessWord = null } = event.context.params;
@@ -25,21 +25,3 @@ export default defineEventHandler(async (event) => {
 
   return state;
 });
-
-function generateHint(targetWord, guessWord) {
-  const source = [...targetWord];
-
-  return [...guessWord]
-    .map((letter, i) => {
-      if (letter === targetWord[i]) {
-        source[i] = null;
-        return true;
-      }
-      return false;
-    })
-    .map((exact, i) => {
-      if (exact) return '2';
-      if (source.includes(guessWord[i])) return '1';
-      return '0';
-    });
-}

@@ -11,4 +11,22 @@ export const generateAnswer = () => {
   return answer;
 };
 
+export function generateHint(targetWord, guessWord) {
+  const source = [...targetWord];
+
+  return [...guessWord]
+    .map((letter, i) => {
+      if (letter?.toLowerCase() === targetWord[i]) {
+        source[i] = null;
+        return true;
+      }
+      return false;
+    })
+    .map((exact, i) => {
+      if (exact) return '2';
+      if (targetWord.includes(guessWord[i])) return '1';
+      return '0';
+    });
+}
+
 export default {};
