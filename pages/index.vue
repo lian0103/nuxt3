@@ -8,7 +8,7 @@ const { state, submitGuess, resetGuess } = useGameState();
 const handleGuess = () => {
   submitGuess(guessWord.value);
 };
-const handleReset = () => {
+const handleResetClick = () => {
   isAnsShow.value = false;
   resetGuess();
 };
@@ -31,7 +31,7 @@ const handleSubmit = () => {
           </button>
           <button
             class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded w-fit"
-            @click="handleReset"
+            @click="handleResetClick"
           >
             RESET
           </button>
@@ -44,7 +44,7 @@ const handleSubmit = () => {
           ans: {{ state[0] ? state[0][2] : '' }}
         </div>
 
-        <form action="" @submit.prevent="handleSubmit">
+        <form @submit.prevent="handleSubmit">
           <input
             type="text"
             class="my-4 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"

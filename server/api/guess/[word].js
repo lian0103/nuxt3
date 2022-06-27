@@ -19,7 +19,10 @@ export default defineEventHandler(async (event) => {
     setCookie(event.res, 'answer', encode(targetWord));
   }
 
-  const state = decode(useCookie(event.req, 'state'));
+  const state = Array.isArray(decode(useCookie(event.req, 'state')))
+    ? decode(useCookie(event.req, 'state'))
+    : [];
+  console.log('state', state);
   state.push([guessWord, generateHint(targetWord, guessWord), targetWord]);
   setCookie(event.res, 'state', encode(state));
 

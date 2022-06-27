@@ -16,7 +16,7 @@ export const useGameState = () => {
 
   async function resetGuess() {
     state.value = [];
-    await $fetch('/api/guess/reset', {
+    await $fetch('/api/guess/initReset', {
       method: 'DELETE',
     });
   }
