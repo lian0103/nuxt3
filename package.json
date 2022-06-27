@@ -5,7 +5,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "start":"nuxt dev"
   },
   "devDependencies": {
     "@nuxt/postcss8": "^1.1.3",
