@@ -24,7 +24,7 @@ export function generateHint(targetWord, guessWord) {
     })
     .map((exact, i) => {
       if (exact) return '2';
-      if (targetWord.includes(guessWord[i])) return '1';
+      if (targetWord.includes((''+guessWord[i]).toLowerCase())) return '1';
       return '0';
     });
 }
