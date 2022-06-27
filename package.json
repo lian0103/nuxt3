@@ -5,7 +5,7 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
+    "heroku-postbuild": "npm run build"
   },
   "devDependencies": {
     "@nuxt/postcss8": "^1.1.3",
