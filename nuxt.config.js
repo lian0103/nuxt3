@@ -8,7 +8,7 @@ export default defineNuxtConfig({
       postcssOptions: require('./postcss.config.js'),
     },
   },
-  publicRuntimeConfig: {
-    port: 3000,
-  },
+  // publicRuntimeConfig: {
+  //   port: 3000,
+  // },
 });
