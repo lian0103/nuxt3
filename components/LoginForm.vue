@@ -1,7 +1,16 @@
 <script setup>
 import facebookIcon from '~icons/typcn/social-facebook';
 import lineIcon from '~icons/fa6-brands/line';
+
 const router = useRouter();
+const config = useRuntimeConfig();
+
+
+const handleLineLogin = () => {
+  // console.log(config);
+  let uri = config.OAUTH_LINE;
+  window.location.href = uri;
+};
 
 const handleLoign = () => {
   router.push({ path: '/main' });
@@ -43,7 +52,7 @@ const handleLoign = () => {
               data-mdb-ripple-color="light"
               class="other-login"
             >
-              <line-icon />
+              <line-icon @click="handleLineLogin" />
             </button>
           </div>
           <div
