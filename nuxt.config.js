@@ -1,4 +1,5 @@
 import { defineNuxtConfig } from 'nuxt';
+import Icons from 'unplugin-icons/vite';
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
@@ -8,7 +9,12 @@ export default defineNuxtConfig({
       postcssOptions: require('./postcss.config.js'),
     },
   },
-  // publicRuntimeConfig: {
-  //   port: 3000,
-  // },
+  vite: {
+    plugins: [
+      Icons({
+        // the feature below is experimental ⬇️
+        autoInstall: true,
+      }),
+    ],
+  },
 });
