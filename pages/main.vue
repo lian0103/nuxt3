@@ -2,6 +2,8 @@
 definePageMeta({
   title: 'EC',
 });
+const { $calc } = useNuxtApp();
+
 </script>
 
 <template>
@@ -31,6 +33,7 @@ definePageMeta({
       </div>
     </div>
   </div>
+  <p>{{$calc(1,50)}}</p>
 </template>
 
 <style lang="scss"></style>
